@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Subasta.API.props" />
+</Project>
