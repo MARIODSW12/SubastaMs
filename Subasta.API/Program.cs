@@ -41,11 +41,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IRestClient>(new RestClient());
 builder.Services.AddSingleton<ICronJobService, CronJobService>();
 
-// Registrar configuración de MongoDB
+// Registrar configuraciÃ³n de MongoDB
 builder.Services.AddSingleton<MongoWriteDbConfig>();
 builder.Services.AddSingleton<MongoReadDbConfig>();
 
-// Registrar configuración de Log4Net
+// Registrar configuraciÃ³n de Log4Net
 builder.Services.AddSingleton(LogManager.GetLogger(typeof(Program)));
 
 // REGISTRA EL REPOSITORIO ANTES DE MediatR
@@ -164,11 +164,10 @@ builder.Services.AddHangfireServer();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseCors("AllowAll");
 
 
